@@ -15,4 +15,4 @@ def calc_ave(request):
     tf.fig_update_layout(fig,"1961")
     tf.date_break(fig,df)
     tf.fig_update_axes(fig)
-    return render(request, 'calc/calc_ave.html', {'fig':fig.show(config = tf.config())})
+    return render(request, 'calc/calc_ave.html', {})
