@@ -1,13 +1,11 @@
 from django.db import models
-
+from .tool import tech_func as tf
+import pandas as pd
 # Create your models here.
 
 class Calc_etc(models.Model):
-    n1 = 1
-    n2 = 2
-    n3 = 3
-    sum = n1 + n2 + n3
-    numbers = 3
+    df = pd.read_csv("calc/1961.csv")
+    df["EMA30"] = df["close"].ewm(span=30).mean()
 
     def ave(self):
         ave = self.sum / self.numbers
